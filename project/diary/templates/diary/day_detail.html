@@ -1,0 +1,21 @@
+<!doctype html>
+{% extends 'diary/base.html' %}
+
+{% block content %}
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>タイトル</th>
+            <td>{{ day.title }}</td>
+        </tr>
+        <tr>
+            <th>本文</th>
+            <td>{{ day.text | linebreaksbr | urlize }}</td>
+        </tr>
+        <tr>
+            <th>日付</th>
+            <td>{{ day.date }}</td>
+        </tr>
+        </thead>
+    </table>
+{% endblock %}

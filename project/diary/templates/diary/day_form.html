@@ -1,0 +1,26 @@
+<!doctype html>
+{% extends 'diary/base.html' %}
+
+{% block content %}
+<p>{{ day.title }}</p>
+    <form action="" method="POST">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>タイトル</th>
+                <td>{{ form.title }}</td>
+            </tr>
+            <tr>
+                <th>本文</th>
+                <td>{{ form.text }}</td>
+            </tr>
+            <tr>
+                <th>日付</th>
+                <td>{{ form.date }}</td>
+            </tr>
+            </thead>
+        </table>
+        <button type="submit" class="btn btn-outline-primary">送信</button>
+        {% csrf_token %}
+    </form>
+{% endblock %}
